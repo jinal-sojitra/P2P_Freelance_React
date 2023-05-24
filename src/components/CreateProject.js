@@ -1,8 +1,8 @@
 import React from 'react';
 import './createProject.css'
-import { ethers } from 'ethers';
 import contractABI from '../artifacts/contractAbI'; // Replace with the actual contract ABI
 import WalletConnect from './WalletConnect';
+const ethers = require("ethers")
 const contractAddress = '0x374014d4383FE06CC588e089Ce55a4245fA4BC2B';
 
 function CreateProject({ postProject }) {
@@ -19,7 +19,7 @@ function CreateProject({ postProject }) {
         await window.ethereum.enable();
 
         // Get the provider
-        const provider = new ethers.providers.BrowserProvider(window.ethereum);
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
 
         // Get the signer
         const signer = provider.getSigner();

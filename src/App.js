@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       {/* <WalletConnect></WalletConnect> */}
-     {/* <CreateProject></CreateProject> */}
+     <CreateProject></CreateProject>
      <ProjectItem/>
     </div>
   );
