@@ -20,27 +20,20 @@ function CreateProject({ postProject }) {
 
         // Get the provider
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-        // Get the signer
         const signer = provider.getSigner();
-
-        // Get the contract instance
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
-
-        // Call the contract function
         await contract.postProject(title, description, technologies.split(','), budget);
 
-        // Reset form values
         setTitle('');
         setDescription('');
         setTechnologies('');
         setBudget(0);
 
-        // Handle success or display a success message
         alert('Project created successfully!');
       }catch(error){
         alert("Error creating project: ",error);
-      }}
+      }
+    }
       else{
         alert('Please install Metamask')
       }

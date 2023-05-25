@@ -1,3 +1,11 @@
+.custom-navbar {
+  background-color: #86b2e4; /* Set your desired background color */
+}
+
+.custom-navbar .nav-link {
+  color: #6d19cc; /* Set your desired text color */
+}
+
 .form-container {
     max-width: 400px;
     margin: 0 auto;
@@ -41,4 +49,5 @@
   button[type='submit']:hover {
     background-color: #3dd2f7;
   }
+  
   
