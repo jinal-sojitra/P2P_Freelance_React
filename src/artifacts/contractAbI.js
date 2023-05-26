@@ -1,24 +1,5 @@
 const abi=[
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "freelancer",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "projectId",
-				"type": "uint256"
-			}
-		],
-		"name": "BidWithdrawn",
-		"type": "event"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -41,7 +22,7 @@ const abi=[
 		],
 		"name": "completeProject",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -78,9 +59,9 @@ const abi=[
 				"type": "uint256"
 			},
 			{
-				"internalType": "address",
-				"name": "_freelancerAdd",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "_freelancerId",
+				"type": "uint256"
 			}
 		],
 		"name": "finalizeFreelancer",
@@ -252,7 +233,7 @@ const abi=[
 		],
 		"name": "sendRequest",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -292,19 +273,6 @@ const abi=[
 			}
 		],
 		"name": "updateFreelancer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_projectId",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawBid",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -361,6 +329,95 @@ const abi=[
 				"internalType": "string",
 				"name": "name",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_projectId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_requestIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "getFreelancerRequest",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getProjects",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "budget",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "employer",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "freelancerRequests",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCancelled",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isComplete",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "freelancer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isFinalized",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct FreelancePlatform.Project[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",

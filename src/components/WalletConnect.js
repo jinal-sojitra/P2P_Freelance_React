@@ -26,8 +26,6 @@ export default function WalletConnect() {
         setConnButton(newbtn.slice(0,12)+"..");
     }
 
-    
-
     const chainChangeHandler = () => {
         window.location.reload();
     }
@@ -38,7 +36,7 @@ export default function WalletConnect() {
 
     return (
         <div>
-            <button className={`btn btn-danger}`}  onClick={connectWallet}>{connButton}</button>
+            <button className={`btn btn-${defaultAccount?'primary':'danger'}`}  onClick={connectWallet}>{connButton}</button>
             {/* <div style={{ color: '#50f366' }}><h3>Address: {defaultAccount}</h3></div>
             <div style={{ color: '#f66366' }}><h3>Balance: {userBalance}</h3></div> */}<br/>
             {errorMessage}

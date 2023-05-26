@@ -7,26 +7,30 @@ import ProjectItem from './components/ProjectItem';
 import Projects from './components/Projects';
 import DetailProject from './components/DetailProject'
 import ProjectState from './context/projectState';
+import Wallet from './context/walletContext';
 
-function App() {
+function App(){
   return (
     <div className="App">
-      <ProjectState>
+      {/* <ProjectState> */}
+      {/* <Wallet>      */}
       <Router>
-      {/* <WalletConnect></WalletConnect> */}
+      
 
       <Navbar/>
-      <Routes>
+  
+      <Routes> 
       <Route exact path="/projects" element={<Projects/>}/>
       <Route exact path="/detail/:id" element={<DetailProject/>}/>
 
         {/* <Route exact path="/" element={Home}/> */}
-        <Route exact path="/postProject" element={<CreateProject/>}/>
+        <Route exact path="/createProject" element={<CreateProject/>}/>
       </Routes>
      {/* <CreateProject></CreateProject> */}
      {/* <ProjectItem/> */}
      </Router>
-     </ProjectState>
+     {/* </Wallet> */}
+     {/* </ProjectState> */}
     </div>
   );
 }

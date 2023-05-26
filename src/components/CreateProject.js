@@ -3,7 +3,7 @@ import './createProject.css'
 import contractABI from '../artifacts/contractAbI'; // Replace with the actual contract ABI
 import WalletConnect from './WalletConnect';
 const ethers = require("ethers")
-const contractAddress = '0x374014d4383FE06CC588e089Ce55a4245fA4BC2B';
+const contractAddress = '0xb011243e1AE4627c9201F5d5CE21092f99D95732';
 
 function CreateProject({ postProject }) {
   const [title, setTitle] = React.useState('');
